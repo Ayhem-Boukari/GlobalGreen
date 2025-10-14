@@ -46,11 +46,15 @@ python -m venv .venv
 # or source .venv/bin/activate   # (Mac/Linux)
 pip install -r backend/requirements.txt
 
+---
 
 ### 2️⃣ Create environment file .env
+
 GROQ_API_KEY=your_groq_api_key
 FASTAPI_URL=http://localhost:8000
 NEXT_PUBLIC_CHAT_ENDPOINT=/api/chat
+
+---
 
 ### 3️⃣ Run the project
 
@@ -69,7 +73,10 @@ npm run dev
 
 ➡️ Backend: http://localhost:8000/docs
 
+---
+
 ### 🧭 API Overview
+
 Endpoint	Method	Description
 /health	GET	Check server status
 /ask	POST	Send question to AI chatbot
@@ -80,7 +87,10 @@ Example:
 	"question": "How to save water in farming?"
 }
 
+---
+
 ## 🗂 Project Structure
+
 GlobalGreen/
 ├── backend/           # FastAPI backend
 ├── src/               # Next.js frontend
@@ -91,6 +101,8 @@ GlobalGreen/
 ├── public/            # Static assets
 ├── .env.example
 └── README.md
+
+---
 
 ## 🛠 Roadmap
 
@@ -103,6 +115,8 @@ GlobalGreen/
 🚧 Real-time notifications
 
 🚧 Mobile version
+
+---
 
 ## 📜 License
 
