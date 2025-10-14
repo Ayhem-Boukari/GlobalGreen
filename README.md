@@ -1,145 +1,118 @@
-# 🌱 GlobalGreen
+🌱 GlobalGreen
+A full-stack platform that promotes sustainable farming and green energy actions.
 
-A full-stack platform to promote **sustainable farming** and **green energy actions**.  
-Users earn eco-currencies — **HydroCoins, BioCoins, LogiCoins, CarbonCredits** — that combine into **EcoCoins**, usable in a green marketplace.  
-An **AI chatbot powered by Groq** provides quick, practical sustainability guidance.
+Users earn eco-currencies (HydroCoins, BioCoins, LogiCoins, CarbonCredits) that combine into EcoCoins, usable in a green marketplace.
 
----
+An AI chatbot powered by Groq provides instant, practical sustainability guidance.
 
-## 🚀 Features
+🚀 Features
+💰 Multi-currency eco-reward system
 
-- 💰 Multi-currency eco-reward system  
-- 🛒 Green marketplace with filters and product details  
-- 🤖 AI chatbot (Groq Llama 3.3) for sustainability tips  
-- 📊 Dashboard with charts and filters  
-- 🌓 Responsive and accessible UI with dark mode  
+🛒 Green marketplace with smart filters
 
----
+🤖 AI chatbot for sustainability tips (Groq Llama 3.3)
 
-## 🧠 Tech Stack
+📊 Dashboard with interactive charts
 
-**Frontend:** Next.js 15 · React 19 · TypeScript · Tailwind CSS · ApexCharts  
-**Backend:** FastAPI (Python 3.13) · Uvicorn · Pydantic · httpx  
-**AI:** Groq (Llama 3.3 70B Versatile)
+🌓 Responsive and accessible UI with dark mode
 
----
+🧠 Tech Stack
+Frontend: Next.js 15 · React 19 · TypeScript · Tailwind CSS · ApexCharts
 
-## ⚙️ Requirements
+Backend: FastAPI (Python 3.13) · Uvicorn · Pydantic · httpx
 
-- Node.js 18+  
-- Python 3.11+  
-- Git  
+AI: Groq – Llama 3.3 (70B Versatile)
 
----
+⚙️ Requirements
+Node.js 18+
 
-## ⚡ Quick Start
+Python 3.11+
 
-### 1️⃣ Install dependencies
-```bash
+Git
+
+🧩 Quick Start
+1️⃣ Install dependencies
+
+# Install frontend dependencies
 npm install --legacy-peer-deps
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r backend/requirements.txt
-2️⃣ Configure environment variables
-Create .env or .env.local:
 
-env
-Copier le code
+# Create and activate Python virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1 # For Windows PowerShell
+
+# Install backend dependencies
+pip install -r backend/requirements.txt
+
+2️⃣ Create environment file .env
+
 GROQ_API_KEY=your_groq_api_key
 FASTAPI_URL=http://localhost:8000
 NEXT_PUBLIC_CHAT_ENDPOINT=/api/chat
-3️⃣ Run locally
+
+3️⃣ Run the project
+
 Backend
 
-bash
-Copier le code
 cd backend
 python -m uvicorn main:app --reload
+
 Frontend
 
-bash
-Copier le code
 npm run dev
-Frontend → http://localhost:3000
-Backend → http://localhost:8000/docs
 
-📡 API Overview
-Endpoint	Method	Description
-/health	GET	Check server status
-/ask	POST	Send a question to the AI chatbot
+➡️ Frontend: http://localhost:3000
 
-Example:
+➡️ Backend Docs: http://localhost:8000/docs
 
-json
-Copier le code
+🧭 API Overview
+Endpoint
+
+Method
+
+Description
+
+/health
+
+GET
+
+Check server status
+
+/ask
+
+POST
+
+Send question to AI chatbot
+
+Example Request Body for /ask:
+
 {
   "question": "How to save water in farming?"
 }
-🏗 Architecture
-scss
-Copier le code
-┌─────────────────────────────────────────────────────────────┐
-│                      User Interface                         │
-│              (Next.js 15 + React 19 + TypeScript)           │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Next.js API Routes                        │
-│                    (Server Actions)                         │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   FastAPI Backend                           │
-│              (Python 3.13 + FastAPI)                        │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      Groq AI API                            │
-│           (Llama 3.3 70B Versatile Model)                   │
-└─────────────────────────────────────────────────────────────┘
-Data Flow
 
-mathematica
-Copier le code
-User Input → Next.js UI → API Route → FastAPI Backend → Groq AI → Response
-📁 Project Structure
-csharp
-Copier le code
+🗂️ Project Structure
 GlobalGreen/
-├── backend/            # FastAPI app
-│   ├── main.py
-│   └── requirements.txt
-├── src/
-│   ├── app/            # Pages and routes
-│   ├── components/     # Reusable UI components
-│   ├── services/       # API logic
-│   ├── lib/            # Utils and helpers
-│   └── types/          # TypeScript types
-├── public/             # Static assets
+├── backend/           # FastAPI backend
+├── src/               # Next.js frontend
+│   ├── app/           # Pages and routes
+│   ├── components/    # Reusable UI components
+│   ├── services/      # API layer
+│   └── types/         # TypeScript types
+├── public/            # Static assets
 ├── .env.example
-├── package.json
 └── README.md
-🛠 Roadmap
-✅ Core eco-currency system
 
-✅ AI chatbot integration
+🛠️ Roadmap
+[✅] Core eco-currency system
 
-🚧 Authentication & profiles
+[✅] AI chatbot integration
 
-🚧 Notifications and leaderboard
+[🚧] Authentication & profiles
 
-🚧 Mobile version
+[🚧] Real-time notifications
+
+[🚧] Mobile version
 
 📜 License
 Licensed under the MIT License.
+
 © 2025 GlobalGreen — Made with 💚 for a sustainable future.
-
-yaml
-Copier le code
-
----
-
-Would you like me to add minimal **GitHub badges** (Next.js, FastAPI, Python, MIT) on top for a more polis
