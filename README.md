@@ -1,3 +1,91 @@
+GlobalGreen
+===========
+
+A full‑stack platform to promote sustainable farming and green energy actions.
+Users earn eco‑currencies (HydroCoins, BioCoins, LogiCoins, CarbonCredits) that
+roll up into EcoCoins and can be used in a green marketplace. An AI chatbot
+powered by Groq provides quick, practical guidance.
+
+Features
+--------
+- Eco‑currencies with balances and transaction history
+- Green marketplace with filters and product details
+- AI chatbot (Groq Llama 3.3) for sustainability tips
+- Dashboard with charts and period filters
+- Responsive, accessible UI with dark mode
+
+Tech Stack
+---------
+- Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, ApexCharts
+- Backend: FastAPI (Python 3.13), Uvicorn, Pydantic, httpx
+- AI: Groq (llama-3.3-70b-versatile)
+
+Requirements
+------------
+- Node.js 18+
+- Python 3.11+
+- Git
+
+Quick Start
+-----------
+1) Install dependencies
+
+```powershell
+# from project root
+npm install --legacy-peer-deps
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r backend/requirements.txt
+```
+
+2) Configure environment variables
+
+Create `.env` or `.env.local` (not committed):
+
+```env
+GROQ_API_KEY=your_groq_api_key
+FASTAPI_URL=http://localhost:8000
+NEXT_PUBLIC_CHAT_ENDPOINT=/api/chat
+```
+
+3) Run locally
+
+Terminal A (backend):
+```powershell
+cd backend
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Terminal B (frontend):
+```powershell
+npm run dev
+```
+
+Frontend: http://localhost:3000
+Backend:  http://localhost:8000  (docs at /docs)
+
+API (brief)
+-----------
+- GET `/health` → `{ "status": "ok" }`
+- POST `/ask` with `{ "question": "..." }` → `{ "response": "..." }`
+
+Project Structure (short)
+-------------------------
+```
+backend/           # FastAPI app
+src/               # Next.js app (app/, components/, services/)
+public/            # Static assets
+.env.example       # Env template
+```
+
+Notes
+-----
+- Do not commit `.env` or `.env.local` (already ignored).
+- If port 3000 is busy, Next.js will auto‑switch to 3001.
+
+License
+-------
+MIT
 <div align="center"># NextAdmin - Next.js Admin Dashboard Template and Components
 
 
